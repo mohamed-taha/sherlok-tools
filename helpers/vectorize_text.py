@@ -24,14 +24,14 @@ word_data = []
 for file in os.listdir(positive_files_path):
 	f = open(positive_files_path + file, 'r')
 	text = parseOutText(f)
-	word_data.append(text)
+	word_data.append(text.strip())
 	label_data.append(1)
 	f.close()
 
 for file in os.listdir(negative_files_path):
 	f = open(negative_files_path + file, 'r')
 	text = parseOutText(f)
-	word_data.append(text)
+	word_data.append(text.strip())
 	label_data.append(0)
 	f.close()
 

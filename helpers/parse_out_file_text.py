@@ -7,7 +7,7 @@ def parseOutText(f):
     """ given an opened text file f, parse out all text """
 
     f.seek(0)  ### go back to beginning of file (annoying)
-    all_text = f.read()
+    all_text = f.read().strip()
 
     words = ""
     if len(all_text) > 1:
