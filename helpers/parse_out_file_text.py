@@ -16,6 +16,15 @@ def parseOutText(f):
 
     return words
 
+#just for test only
+def parseOutText_csv(text):
+    all_text=text.strip()
+    words=""
+    if len(all_text)>1:
+        words=all_text.translate(string.maketrans("",""),string.punctuation)
+        #print(words)
+    return  words    
+
 def main():
     ff = open("/home/mohamed/python/sherlok-tools/datasets/Twitter/Positive/positive117.txt", "r")
     text = parseOutText(ff)
