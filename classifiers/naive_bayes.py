@@ -14,7 +14,7 @@ import sys
 from time import time
 sys.path.append("/home/mohamed/python/sherlok-tools/helpers/")
 from text_preprocess import Preprocess
-from preprocess_input import preprocess_input
+#from preprocess_input import preprocess_input
 from sklearn.naive_bayes import GaussianNB
 
 
@@ -42,8 +42,8 @@ print "#################################"
 print "tain time: ", round(train_t1 - train_t0, 3), "s"
 print "prediction time: ", round(test_t1 - test_t0, 3), "s"
 
-print "#################################"
-text = ['يحب']
-print "prediction of ", clf.predict(preprocess_input(text))
+# print "#################################"
+# text = ['يحب']
+# print "prediction of ", clf.predict(preprocess_input(text))
 
 
