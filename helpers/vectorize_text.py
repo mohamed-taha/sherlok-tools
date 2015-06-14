@@ -39,7 +39,7 @@ for file in os.listdir(negative_files_path):
 
 ###############################################################
 # add nile university  dataset
-
+'''
 words=[]
 labels=[]
 f=open("/home/mohamed/python/sherlok-tools/datasets/m.csv")
@@ -61,6 +61,7 @@ for i in range(0,len(words)):
         text = parseOutText_csv(words[i]) # get stem
         word_data.append(words[i].strip())
         label_data.append(0)
+'''        
 
 
 

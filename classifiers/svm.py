@@ -15,7 +15,7 @@ import sys
 from time import time
 sys.path.append("/home/mohamed/python/sherlok-tools/helpers/")
 from text_preprocess import Preprocess
-#from preprocess_input import preprocess_input
+from preprocess_input import preprocess_input
 from sklearn import svm
 
 
@@ -25,7 +25,7 @@ from sklearn import svm
 features_train, features_test, labels_train, labels_test = Preprocess()
 
 # classification goes here
-
+'''
 clf = svm.SVC(kernel="linear")
 
 # training
@@ -67,7 +67,7 @@ print "#################################"
 print "tain time: ", round(train_r1 - train_r0, 3), "s"
 print "prediction time: ", round(test_r1 - test_r0, 3), "s"
 print "#################################"
-
+'''
 #SVC lib_linear
 print("lib_linear")
 clf_lib=LinearSVC()
@@ -86,3 +86,12 @@ print "accuracy: ", clf_lib.score(features_test, labels_test)
 print "#################################"
 print "tain time: ", round(train_l1 - train_l0, 3), "s"
 print "prediction time: ", round(test_l1 - test_l0, 3), "s"
+
+######################################
+text = 'اى هبل'
+Ifeatures_train,Ifeatures_test,Ilabels_train=preprocess_input([text])
+clf_lib.fit(Ifeatures_train,Ilabels_train)
+print ("prediction of ",str(clf_lib.predict(Ifeatures_test))[1])
+
+#print "prediction of ", clf.predict(preprocess_input(text))
+# print  str(clf.predict(Ifeatures_test))[1]
