@@ -37,6 +37,35 @@ for file in os.listdir(negative_files_path):
 	f.close()
 
 
+##############################################3
+# labr dataset
+new_rating=[]
+new_body=[]
+l=LABR()
+(rating, a, b, c, body)=l.read_clean_reviews()
+for i in range(0,len(rating)):
+    if rating[i]==1 or rating[i]==2:
+        new_rating.append(0)
+        new_body.append(body[i])
+    elif rating[i]==4 or rating[i]==5 :
+        new_rating.append(1)
+        new_body.append(body[i])
+    else:
+        continue
+
+
+
+
+for i in range(0,len(new_body)):
+
+    te=(new_body[i])
+    t=te.encode("utf-8")
+    #print(type(t))
+    labr_text =t.translate(string.maketrans("", ""), string.punctuation)
+    #print(labr_text)
+    word_data.append(labr_text.strip())
+    label_data.append(new_rating[i])
+
 ###############################################################
 # add nile university  dataset
 '''
